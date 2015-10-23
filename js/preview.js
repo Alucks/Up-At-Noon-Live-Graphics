@@ -1,7 +1,3 @@
-/*$(document).on("click", function() {
-  document.documentElement.webkitRequestFullscreen();
-})*/
-
 $(document).on("ready", function() {
   console.log('this is the preview string => ' + localStorage.getItem("previewString"));
   if (localStorage.getItem("previewString") !== null) {
@@ -47,7 +43,8 @@ $(document).on("ready", function() {
     "scheduleThree",
     "scheduleFour",
     "scheduleFive",
-    "scheduleNumber"
+    "scheduleNumber",
+    "bannerWidth"
   ];
   var iconTypes = [
     "bannerIcon",
@@ -86,7 +83,26 @@ $(document).on("ready", function() {
     }
   });
 
+  function bannerWidth() {
+    if (localStorage.getItem('bannerWidth') != null){
+      var bW = localStorage.getItem('bannerWidth');
+      $('#banner').css('max-width', bW);
+      var lh = $('#banner .lowerContent').height();
+      var lowerh = lh + 56;
+      $('.banner-on #banner .lower').css('max-height', lowerh);
+    }
+  };
+
   function bannerHeight() {
+    //sets small class if there is fewer than 18 character
+    var str = localStorage.getItem('bannerTitle');
+    var n = str.length;
+    if (n < 22) {
+      $('body').addClass('bannerSmall');
+    } else {
+      $('body').removeClass('bannerSmall');
+    }
+    // Sets height
     var lh = $('#banner .lowerContent').height();
     var lowerh = lh + 56;
     $('.banner-on #banner .lower').css('max-height', lowerh);
@@ -115,6 +131,10 @@ $(document).on("ready", function() {
       bannerHeight();
     };
 
+    if (event.key == "bannerWidth") {
+      bannerWidth();
+    };
+
     if (event.key == "twitterContent") {
       tCardHeight();
     };
@@ -133,6 +153,7 @@ $(document).on("ready", function() {
     tCardHeight();
     comingUpHeight();
     fullHeight();
+    bannerWidth();
   };
 
   window.addEventListener('storage', function(event) {
@@ -158,7 +179,7 @@ $(document).on("ready", function() {
           $('#' + value).css("background-image", 'url("' + localStorage.getItem(value) + '")');
         } else {
           $('#' + value).text(localStorage.getItem(value));
-          animationHeightIni();
+          animationHeight();
         }
       }
     });
