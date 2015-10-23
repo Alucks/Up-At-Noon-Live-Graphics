@@ -11,6 +11,7 @@ Open Terminal and  run the following 2 commands:
   3. Install the two fonts required fonts.
   4. Open http://localhost:8080/editor.html in chrome on your main display.
   5. Open http://localhost:8080/live.html in chrome on your secondary 1080p display. Double Click on the Browser to enter a full screen display.
-  6. Controlling The Graphics
-  7. Push Live Button: Take the current preview display and push it to the live view.
-  8. Clear Button: Remove all graphics from preview and the live view.
+  
+### Controlling The Graphics
+  1. Push Live Button: Take the current preview display and push it to the live view.
+  2. Clear Button: Remove all graphics from preview and the live view.
