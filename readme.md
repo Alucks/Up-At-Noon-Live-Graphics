@@ -6,7 +6,7 @@ The new Live Graphics Editor allows for quick editing of graphics for Up At Noon
 Download the following GitHub Code: https://github.com/Alucks/Up-At-Noon-Live-Graphics  with ‘Download Zip’ button.
 Extract the zip file and place the 'Up-At-Noon-Live-Graphics' folder in your documents folder.
 Open Terminal and  run the following 2 commands:
-  1. > cd documents/live-editor-master     
+  1. > cd documents/Up-At-Noon-Live-Graphics     
   2. > python -m SimpleHTTPServer 8080
   3. Install the two fonts required fonts.
   4. Open http://localhost:8080/editor.html in chrome on your main display.
