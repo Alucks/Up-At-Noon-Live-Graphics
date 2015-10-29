@@ -14,7 +14,6 @@ $(document).on("ready", function() {
     "cBugShow",
     "cBugGame",
     "bannerTitle",
-    "bannerSub",
     "infoBarBanner",
     "comingUpTitle",
     "infoBarComingUp",
